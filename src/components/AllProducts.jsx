@@ -2,7 +2,7 @@ import { useFetch } from "../hooks/useFetch"
 import { Card } from "./Card";
 
 export const AllProducts = () => {
-  const [data,loading,error] = useFetch({path:"/",dependencies:[]});
+  const [data,loading,error] = useFetch({path:"/products",dependencies:[]});
 
   if(loading){
     return <h3>Loading...</h3>

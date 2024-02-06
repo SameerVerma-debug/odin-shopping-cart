@@ -4,7 +4,7 @@ import { Card } from "./Card";
 
 export const CategoryProducts = () => {
   const {name} = useParams();
-  const [data,loading,error] = useFetch({path:`/category/${name}`,dependencies:[name]});
+  const [data,loading,error] = useFetch({path:`/products/category/${name}`,dependencies:[name]});
 
   if(loading){
     return <h3>Loading...</h3>

@@ -2,7 +2,7 @@ import { useFetch } from "../hooks/useFetch"
 import { NavLink } from "react-router-dom";
 
 export const ProductCategories = () => {
-  const [data] = useFetch({path:"/categories",dependencies:[]});
+  const [data] = useFetch({path:"/products/categories",dependencies:[]});
 
   return (
     <div className="categories">
