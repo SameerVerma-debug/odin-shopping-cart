@@ -1,8 +1,10 @@
 import { useParams } from "react-router-dom";
 import { useFetch } from "../hooks/useFetch";
 import { Button } from "./Button";
-import { useContext, useRef } from "react";
+import { useContext, useRef, useState } from "react";
 import { CartContext } from "../App";
+import "../styles/product-details.css";
+import { ProductQuantity } from "./ProductQuantity";
 
 export const ProductDetail = () => {
   const { id } = useParams();
@@ -10,7 +12,7 @@ export const ProductDetail = () => {
     path: `/products/${id}`,
     dependencies: [],
   });
-  const productQuantity = useRef(1);
+  const [productQuantity, setProductQuantity] = useState(1);
   const { cartItems, setCartItems } = useContext(CartContext);
 
   if (error) {
@@ -18,34 +20,41 @@ export const ProductDetail = () => {
   }
 
   const addToCart = () => {
-    const newCart = [...cartItems];
+    const newCart = cartItems.filter((item) => {
+      return item.id !== product.id;
+    });
 
     const item = {
       id: product.id,
       title: product.title,
       image: product.image,
       price: product.price,
-      quantity: productQuantity.current.value,
+      quantity: productQuantity,
     };
 
-    const index = newCart.findIndex((item) => {
-      return item.id == product.id;
-    });
-
-    index >=0 ? newCart[index] = item : newCart.push(item);
+    newCart.push(item);
 
     setCartItems(newCart);
-    console.log(newCart);
   };
+
+  
 
   return (
     product && (
-      <div className="product-detail">
-        <img src={product.image} />
-        <h3>{product.title}</h3>
-        <p>${product.price}</p>
-        <input ref={productQuantity} type="number" min="1" defaultValue="1" />
-        <Button value="Add To Cart" onClick={addToCart} />
+      <div className="product-detail-wrapper">
+        <div className="product-detail">
+          <img src={product.image} className="product-image" />
+          <div className="title-price-addToCart">
+            <p className="product-title">{product.title}</p>
+            <p className="product-price">$ {product.price}</p>
+            <ProductQuantity productQuantity={productQuantity} setProductQuantity = {setProductQuantity} />
+            <Button value="Add To Cart" onClick={addToCart} />
+          </div>
+        </div>
+        <div className="product-description">
+          <h3>Description</h3>
+          <p>{product.description}</p>
+        </div>
       </div>
     )
   );

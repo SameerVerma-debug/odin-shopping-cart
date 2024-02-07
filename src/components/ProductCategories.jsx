@@ -1,16 +1,27 @@
-import { useFetch } from "../hooks/useFetch"
+import { useFetch } from "../hooks/useFetch";
 import { NavLink } from "react-router-dom";
 
 export const ProductCategories = () => {
-  const [data] = useFetch({path:"/products/categories",dependencies:[]});
+  const [data] = useFetch({ path: "/products/categories", dependencies: [] });
 
   return (
-    <div className="categories">
-      {data && data.map((category) => {
-        return (
-          <NavLink to={`/shop/category/${category}`} className="category" key={category}>{category.toUpperCase()}</NavLink>
-        )
-      })}
+    <div className="categories-wrapper">
+      <h2>Categories</h2>
+      <div className="categories">
+        <NavLink to="/shop/all">All Products</NavLink>
+        {data &&
+          data.map((category) => {
+            return (
+              <NavLink
+                to={`/shop/category/${category}`}
+                className="category"
+                key={category}
+              >
+                {category}
+              </NavLink>
+            );
+          })}
+      </div>
     </div>
-  )
-}
+  );
+};

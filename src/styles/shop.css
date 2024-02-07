@@ -1,0 +1,28 @@
+.shop{
+  display: grid;
+  grid-template-columns: 0.2fr 1fr;
+  padding:2rem;
+  gap:2rem;
+  flex: 1;
+}
+
+.categories-wrapper{
+  padding-right:3rem;
+  justify-items: center;
+  border-right:1px solid lightgray;
+  position: sticky;
+  width:100%;
+  
+}
+
+.categories-wrapper > h2{
+  margin-bottom:1rem;
+}
+
+.active{
+  color:rgb(160, 35, 35);
+}
+
+.cards-wrapper > h1{
+  margin-bottom: 2rem;
+}

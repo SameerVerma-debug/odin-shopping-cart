@@ -1,0 +1,21 @@
+.button{
+  padding:0.7rem;
+  font-size: medium;
+  font-weight: bold;
+  width:9rem;
+  background-color: black;
+  color: white;
+  border-radius: 0.5rem;
+  border:none;
+  cursor: pointer;
+  transition: all 0.10s;
+}
+
+.button:hover{
+  transform: scale(1.02);
+  box-shadow: 4px 4px 5px rgb(177, 177, 177);
+}
+
+.button:active{
+  transform: translateX(1px) translateY(1px);
+}

@@ -1,0 +1,11 @@
+.cart,.empty-cart{
+  padding:2rem;
+  flex: 1;
+}
+
+.empty-cart{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}

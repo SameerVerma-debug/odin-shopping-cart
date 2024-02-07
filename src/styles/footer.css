@@ -1,0 +1,51 @@
+.footer{
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  gap:3rem;
+  align-items: center;
+  background-color: black;
+  color:white;
+  padding:4rem;
+  height: auto; 
+}
+
+.footer-logo{
+  height:4rem;
+}
+
+.site-info{
+  width:40vw;
+  max-width:500px;
+}
+
+.links{
+  display: flex;
+  gap:4rem;
+  flex-wrap: wrap;
+}
+
+
+.shop-links{
+  display: flex;
+  flex-direction: column;
+  gap:0.7rem;
+}
+
+.categories{
+  display: flex;
+  flex-direction: column;
+  gap:0.7rem;
+}
+
+.other-links{
+  display: flex;
+  flex-direction: column;
+  gap:0.7rem;
+
+}
+
+
+.links  a{
+  color:white;
+}

@@ -1,5 +1,4 @@
 import { Link } from "react-router-dom";
-import "../styles/card.css";
 
 export const Card = ({ card }) => {
   return (
@@ -7,6 +6,7 @@ export const Card = ({ card }) => {
       <button className="card">
         <img src={card.image} />
         <p>{card.title}</p>
+        <h3>$ {card.price}</h3>
       </button>
     </Link>
   );
