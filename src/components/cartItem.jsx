@@ -2,25 +2,26 @@ import { Link } from "react-router-dom";
 
 export const CartItem = ({ item, changeQuantity, deleteItem }) => {
   return (
-    
-    <div className="cart-item card">
+    <div className="cart-item">
       <Link to={`/products/${item.id}`}>
-      <img className="cart-image" src={item.image} />
+        <div className="cart-image-title">
+          <img className="cart-image" src={item.image} />
+          <p className="cart-item-title">{item.title}</p>
+        </div>
       </Link>
-      <p>{item.title}</p>
-      
+
       <div className="cart-item-quantity">
         <button
           onClick={() => changeQuantity("-", item.id)}
-          className="set-quantity-button"
+          className="set-cart-quantity-button"
           value="-"
         >
           -
         </button>
-        <p>{item.quantity}</p>
+        <p className="cart-item-quantity">{item.quantity}</p>
         <button
           onClick={() => changeQuantity("+", item.id)}
-          className="set-quantity-button"
+          className="set-cart-quantity-button"
           value="+"
         >
           +

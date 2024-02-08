@@ -19,16 +19,16 @@ export const Header = () => {
           <CiSearch size={20} />
         </button>
       </div>
-      <div className="navbar">
+      <nav className="navbar">
         <NavLink to="/">Home</NavLink>
         <NavLink to="/shop/all">Shop</NavLink>
         <div className="navbar-cart">
-          <span className="cart-size">{cartSize == 0 ? "" : cartSize}</span>
+          <span className="cart-size">{cartSize}</span>
           <NavLink to="/cart">
             <FaShoppingCart size={25}/>
           </NavLink>
         </div>
-      </div>
+      </nav>
     </div>
   );
 };

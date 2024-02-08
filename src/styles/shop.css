@@ -4,6 +4,7 @@
   padding:2rem;
   gap:2rem;
   flex: 1;
+  min-height: 100vh;
 }
 
 .categories-wrapper{
@@ -25,4 +26,18 @@
 
 .cards-wrapper > h1{
   margin-bottom: 2rem;
+}
+
+.category-sortbyprice{
+  display: flex;
+  justify-content: space-between;
+  padding-bottom:2rem;
+}
+
+.sort{
+  outline: none;
+  cursor: pointer;
+  border:1px solid lightgray;
+  padding:0.3rem;
+  font-size:14px;
 }

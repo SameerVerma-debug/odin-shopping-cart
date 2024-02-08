@@ -1,7 +1,7 @@
 export const CartTotal = ({ total }) => {
   return (
     <div className="total">
-      <p>Total: $ {total.toFixed(2)}</p>
+      <h2>Total: $ {total.toFixed(2)}</h2>
     </div>
   );
 };
