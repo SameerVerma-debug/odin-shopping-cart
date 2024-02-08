@@ -1,6 +1,6 @@
 .cards{
   display: grid;
-  grid-template-columns: repeat(auto-fit,minmax(240px,1fr));
+  grid-template-columns: repeat(auto-fit,minmax(300px,1fr));
   gap:2rem;
   align-items: center;
   justify-content: center;
@@ -28,7 +28,7 @@
   box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
 }
 
-.card > img{
+.card  img{
   height:12rem;
   width: 10rem;
   object-fit: contain;

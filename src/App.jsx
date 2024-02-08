@@ -14,10 +14,9 @@ export const CartContext = createContext();
 
 function App() {
   const [cartItems, setCartItems] = useState([]);
-  const [cartProductsQuantity,setCartProductsQuantity] = useState(new Map());
   return (
     <div className="app">
-      <CartContext.Provider value={{ cartItems, setCartItems,cartProductsQuantity,setCartProductsQuantity }}>
+      <CartContext.Provider value={{ cartItems, setCartItems}}>
         <BrowserRouter>
           <Header />
           <Routes>

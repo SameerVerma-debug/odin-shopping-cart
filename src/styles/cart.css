@@ -18,6 +18,13 @@
   margin-bottom: 2rem;
 }
 
+.cart-item-quantity{
+  display: flex;
+  gap:0.7rem;
+  align-items: center;
+  justify-content: center;
+}
+
 
 .checkout-button{
   display: flex;
