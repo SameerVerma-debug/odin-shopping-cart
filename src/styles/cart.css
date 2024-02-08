@@ -9,3 +9,18 @@
   align-items: center;
   flex-direction: column;
 }
+
+.cart-items{
+  display: grid;
+  grid-template-columns: repeat(auto-fit,minmax(300px,1fr));
+  gap:2rem;
+  padding-top:1rem;
+  margin-bottom: 2rem;
+}
+
+
+.checkout-button{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

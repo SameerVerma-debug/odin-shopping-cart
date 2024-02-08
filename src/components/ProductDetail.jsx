@@ -13,7 +13,7 @@ export const ProductDetail = () => {
     dependencies: [],
   });
   const [productQuantity, setProductQuantity] = useState(1);
-  const { cartItems, setCartItems } = useContext(CartContext);
+  const { cartItems, setCartItems,  cartProductsQuantity,setCartProductsQuantity } = useContext(CartContext);
 
   if (error) {
     return <h1>Something Went Wrong</h1>;
@@ -29,11 +29,12 @@ export const ProductDetail = () => {
       title: product.title,
       image: product.image,
       price: product.price,
-      quantity: productQuantity,
     };
 
     newCart.push(item);
-
+    cartProductsQuantity.set(product.id,productQuantity);
+    const newCartProductsQuantity = new Map(cartProductsQuantity);
+    setCartProductsQuantity(newCartProductsQuantity);
     setCartItems(newCart);
   };
 
@@ -47,7 +48,7 @@ export const ProductDetail = () => {
           <div className="title-price-addToCart">
             <p className="product-title">{product.title}</p>
             <p className="product-price">$ {product.price}</p>
-            <ProductQuantity productQuantity={productQuantity} setProductQuantity = {setProductQuantity} />
+            <ProductQuantity productQuantity={productQuantity} setProductQuantity={setProductQuantity}/>
             <Button value="Add To Cart" onClick={addToCart} />
           </div>
         </div>
