@@ -5,8 +5,7 @@ export const ProductCategories = () => {
   const [data] = useFetch({ path: "/products/categories", dependencies: [] });
 
   return (
-    <div className="categories-wrapper">
-      <h2>Categories</h2>
+    
       <div className="categories">
         <NavLink to="/shop/all">All Products</NavLink>
         {data &&
@@ -22,6 +21,6 @@ export const ProductCategories = () => {
             );
           })}
       </div>
-    </div>
+    
   );
 };

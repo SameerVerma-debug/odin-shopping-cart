@@ -35,7 +35,7 @@ export const AllProducts = () => {
   return (
     <div className="cards-wrapper">
       <div className="category-sortbyprice">
-        <h1>All Products</h1>
+        <p className="category-name">All Products</p>
         <Sort sortByPrice={sortByPrice}/>
       </div>
       <div className="cards">

@@ -6,8 +6,11 @@ import "../styles/cards.css";
 export const Shop = () => {
   return (
     <div className="shop">
-        <ProductCategories/>
-        <Outlet/>
+      <div className="categories-wrapper">
+        <h2>Categories</h2>
+        <ProductCategories />
+      </div>
+      <Outlet />
     </div>
-  )
+  );
 };

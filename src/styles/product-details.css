@@ -81,3 +81,12 @@
 .set-quantity-button:active{
   transform: scale(0.95);
 }
+
+@media screen and (max-width:480px){
+  .title-price-addToCart{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+}

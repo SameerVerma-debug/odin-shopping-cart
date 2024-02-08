@@ -26,12 +26,14 @@
   flex-wrap: wrap;
   padding:1rem;
   transition: 0.3s;
-  gap:1rem;
+  gap:0.6rem;
   min-width: fit-content;
   width: 80vw;
   justify-content: space-evenly;
   border-top: 1px solid lightgray;
   border-bottom: 1px solid lightgray;
+  padding-top:3rem;
+  padding-bottom:3rem;
 }
 
 .cart-item img{
@@ -41,8 +43,8 @@
 }
 
 .cart-item-title{
-  font-size: 20px;
-  word-spacing: 3px;;
+  font-size: x-large;
+  word-spacing: 5px;
 }
 
 .cart-item-quantity{
@@ -68,12 +70,12 @@
 }
 
 .cart-item-price{
-  font-size: large;
+  font-size: x-large;
   font-weight: bold;
 }
 
 .cart-item-quantity{
-  font-size: large;
+  font-size: x-large;
 }
 
 

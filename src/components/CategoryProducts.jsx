@@ -40,7 +40,7 @@ export const CategoryProducts = () => {
   return (
     <div className="cards-wrapper">
       <div className="category-sortbyprice">
-        <h1>{name}</h1>
+        <p className="category-name">{name}</p>
         <Sort sortByPrice={sortByPrice} />
       </div>
       <div className="cards">
