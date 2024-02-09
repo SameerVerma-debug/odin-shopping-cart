@@ -5,6 +5,8 @@ import { CartItem } from "../components/cartItem";
 import { EmptyCart } from "../components/EmptyCart";
 import { CheckoutButton } from "../components/CheckoutButton";
 import { CartTotal } from "../components/CartTotal";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 export const Cart = () => {
   const { cartItems, setCartItems } = useContext(CartContext);
@@ -21,6 +23,16 @@ export const Cart = () => {
     });
 
     setCartItems(newCart);
+    toast("Item Deleted", {
+      position: "top-right",
+      autoClose: 1000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: false,
+      draggable: false,
+      progress: undefined,
+      theme: "dark",
+    });
   };
 
   const changeQuantity = (button, id) => {
@@ -46,6 +58,18 @@ export const Cart = () => {
 
   return cartItems.length > 0 ? (
     <div className="cart">
+      <ToastContainer
+        position="top-right"
+        autoClose={1000}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+        theme="dark"
+      />
       <h1>Cart</h1>
       <div className="cart-items">
         {cartItems.map((item) => {
@@ -59,8 +83,8 @@ export const Cart = () => {
           );
         })}
       </div>
-      <CartTotal total={total}/>
-      <CheckoutButton/>
+      <CartTotal total={total} />
+      <CheckoutButton />
     </div>
   ) : (
     <EmptyCart />
