@@ -39,3 +39,24 @@
   font-size: medium;
   line-height: 1.5rem;
 }
+
+@media screen and (max-width:770px){
+  .cards{
+    display: grid;
+    grid-template-columns: repeat(2,minmax(160px,1fr));
+    gap:20px;
+  }
+
+  .card img{
+    height:8rem;
+    width:8rem;
+  }
+
+  .card{
+    gap:14px;
+  }
+
+  .card > p{
+    font-size: small;
+  }
+}

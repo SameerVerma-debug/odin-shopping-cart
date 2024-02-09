@@ -22,8 +22,10 @@
   color: rgb(160, 35, 35);
 }
 
-.cards-wrapper > h1 {
-  margin-bottom: 2rem;
+.categories-wrapper > p{
+  font-weight: bold;
+  font-size: x-large;
+  margin-bottom: 1rem;
 }
 
 .category-sortbyprice {
@@ -46,10 +48,11 @@
   font-size: xx-large;
 }
 
-@media screen and (max-width: 580px) {
+@media screen and (max-width: 770px) {
   .shop {
     display: flex;
     flex-direction: column;
+    padding-top:1rem;
   }
 
   .categories-wrapper {
@@ -67,10 +70,21 @@
     width: 100%;
     border-bottom: 1px solid lightgray;
     padding-bottom: 1rem;
+    
+  }
+
+  .categories  p{
+    font-size: medium;
+  }
+
+  .categories-wrapper > p{
+    font-size: 20px;
   }
 
   .sort{
     height:fit-content;
+    font-size: small;
+
   }
 
   .category-name {

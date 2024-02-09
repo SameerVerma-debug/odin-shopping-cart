@@ -7,7 +7,7 @@ export const ProductCategories = () => {
   return (
     
       <div className="categories">
-        <NavLink to="/shop/all">All Products</NavLink>
+        <NavLink to="/shop/all"><p>All Products</p></NavLink>
         {data &&
           data.map((category) => {
             return (
@@ -16,7 +16,7 @@ export const ProductCategories = () => {
                 className="category"
                 key={category}
               >
-                {category}
+                <p>{category}</p>
               </NavLink>
             );
           })}

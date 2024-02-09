@@ -4,8 +4,11 @@
   justify-content: space-between;
   gap:3rem;
   padding:1rem;
-  min-width: fit-content;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  min-width: 100vw;
+  position: fixed;
+  top: 0;
+  z-index: 999;
+  background-color: white;
 }
 
 .logo{
@@ -38,7 +41,7 @@
   right: 1%;
   border: none;
   background-color: rgba(255,255,255,0);
-  bottom:0;
+  bottom:1%;
   cursor: pointer;
 }
 
@@ -68,4 +71,74 @@ a{
   color: black;
   text-decoration: none;
   font-size: large;
+}
+
+a:hover{
+  color: rgb(123, 25, 25);
+}
+
+.sidebar{
+  position: fixed;
+  top: 0;
+  right: 0;
+  height: 100vh;
+  width:260px;
+  z-index:999;
+  background-color: rgba(255, 255, 255, 0.2);
+  box-shadow: -10px 0 10px rgba(0,0,0,0.1);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  padding:1.7rem;
+  gap:2rem;
+  backdrop-filter: blur(15px);
+  display: none;
+}
+
+.sidebar a{
+  width: 100%;
+  display: flex;
+  gap:10px;
+  align-items: center;
+}
+
+@media screen and (max-width:770px){
+  .hideOnMobile{
+    display: none;
+  }
+
+  .logo{
+    width:28vw;
+    height: 100%;
+  }
+
+  .search{
+    padding: 0.3rem;
+  }
+
+  .search-bar{
+    padding:0.8rem;
+    height: 100%;
+    font-size: small;
+  }
+}
+
+@media screen and (min-width:770px){
+  .hideOnDesktop{
+    display: none;
+  }
+}
+
+.open-sidebar{
+  margin-right:0.7rem;
+  background-color: white;
+  border: none;
+  cursor: pointer;
+}
+
+.close-sidebar{
+  background-color: rgba(255,255,255,0);
+  border: none;
+  cursor: pointer;
 }
