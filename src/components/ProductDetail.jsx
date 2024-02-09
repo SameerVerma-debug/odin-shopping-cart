@@ -5,6 +5,8 @@ import { useContext, useState } from "react";
 import { CartContext } from "../App";
 import "../styles/product-details.css";
 import { ProductQuantity } from "./ProductQuantity";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 export const ProductDetail = () => {
   const { id } = useParams();
@@ -13,7 +15,7 @@ export const ProductDetail = () => {
     dependencies: [],
   });
   const [productQuantity, setProductQuantity] = useState(1);
-  const { cartItems, setCartItems} = useContext(CartContext);
+  const { cartItems, setCartItems } = useContext(CartContext);
 
   if (error) {
     return <h1>Something Went Wrong</h1>;
@@ -29,13 +31,22 @@ export const ProductDetail = () => {
       title: product.title,
       image: product.image,
       price: product.price,
-      quantity:productQuantity
+      quantity: productQuantity,
     };
 
     newCart.push(item);
     setCartItems(newCart);
+    toast("Item Added To Cart", {
+      position: "top-right",
+      autoClose: 1000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: false,
+      draggable: false,
+      progress: undefined,
+      theme: "dark",
+    });
   };
-
 
   return (
     product && (
@@ -45,8 +56,23 @@ export const ProductDetail = () => {
           <div className="title-price-addToCart">
             <p className="product-title">{product.title}</p>
             <p className="product-price">$ {product.price}</p>
-            <ProductQuantity productQuantity={productQuantity} setProductQuantity={setProductQuantity}/>
+            <ProductQuantity
+              productQuantity={productQuantity}
+              setProductQuantity={setProductQuantity}
+            />
             <Button value="Add To Cart" onClick={addToCart} />
+            <ToastContainer
+              position="top-right"
+              autoClose={1000}
+              hideProgressBar={false}
+              newestOnTop={false}
+              closeOnClick
+              rtl={false}
+              pauseOnFocusLoss
+              draggable
+              pauseOnHover
+              theme="dark"
+            />
           </div>
         </div>
         <div className="product-description">
