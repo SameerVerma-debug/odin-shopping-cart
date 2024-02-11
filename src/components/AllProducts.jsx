@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { useFetch } from "../hooks/useFetch"
 import { Card } from "./Card";
 import { Sort } from "./Sort";
+import { Loading } from "./Loading";
 
 export const AllProducts = () => {
   const [data, loading, error] = useFetch({ path: "/products", dependencies: [] });
@@ -27,6 +28,10 @@ export const AllProducts = () => {
 
     setProducts(newProductsOrder);
   };
+
+  if(loading){
+    return <Loading/>
+  }
 
   if (error) {
     return <h3>Something Went Wrong</h3>;

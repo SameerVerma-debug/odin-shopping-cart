@@ -7,6 +7,7 @@ import "../styles/product-details.css";
 import { ProductQuantity } from "./ProductQuantity";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import { Loading } from "./Loading";
 
 export const ProductDetail = () => {
   const { id } = useParams();
@@ -27,6 +28,10 @@ export const ProductDetail = () => {
   useEffect(() => {
     window.scrollTo(0,0);
   },[])
+
+  if(loading){
+    return <Loading/>
+  }
 
   if (error) {
     return <h1>Something Went Wrong</h1>;

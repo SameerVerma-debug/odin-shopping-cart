@@ -3,6 +3,7 @@ import { useFetch } from "../hooks/useFetch";
 import { Card } from "./Card";
 import { useEffect, useState } from "react";
 import { Sort } from "./Sort";
+import { Loading } from "./Loading";
 
 export const CategoryProducts = () => {
   const { name } = useParams();
@@ -35,6 +36,10 @@ export const CategoryProducts = () => {
 
     setProducts(newProductsOrder);
   };
+
+  if(loading){
+    return <Loading/>
+  }
 
   if (error) {
     return <h3>Something Went Wrong</h3>;

@@ -8,8 +8,8 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { Header } from "./components/Header";
 import { Footer } from "./components/Footer";
 import { createContext, useState } from "react";
+import {Error} from "./pages/Error"
 import "./styles/app.css"
-import { useFetch } from "./hooks/useFetch";
 
 export const CartContext = createContext();
 
@@ -28,6 +28,7 @@ function App() {
             </Route>
             <Route path="products/:id" element={<ProductDetail />} />
             <Route path="cart" element={<Cart />} />
+            <Route path="*" element={<Error/>}/>
           </Routes>
           <Footer />
         </BrowserRouter>
