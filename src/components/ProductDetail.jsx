@@ -1,7 +1,7 @@
 import { useParams } from "react-router-dom";
 import { useFetch } from "../hooks/useFetch";
 import { Button } from "./Button";
-import { useContext, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { CartContext } from "../App";
 import "../styles/product-details.css";
 import { ProductQuantity } from "./ProductQuantity";
@@ -14,8 +14,16 @@ export const ProductDetail = () => {
     path: `/products/${id}`,
     dependencies: [],
   });
+
+  //quantity to set in cart
   const [productQuantity, setProductQuantity] = useState(1);
+  //items in cart
   const { cartItems, setCartItems } = useContext(CartContext);
+
+  //scroll to top when rendered
+  useEffect(() => {
+    window.scrollTo(0,0);
+  },[])
 
   if (error) {
     return <h1>Something Went Wrong</h1>;
