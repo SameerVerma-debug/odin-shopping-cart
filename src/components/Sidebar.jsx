@@ -5,12 +5,12 @@ import { CartContext } from "../App";
 import { useContext, useEffect, useRef } from "react";
 import useOutsideClick from "../hooks/useOutsideClick";
 
-export const Sidebar = ({sidebar,setSidebar}) => {
+export const Sidebar = ({ sidebar, setSidebar }) => {
   const { cartItems } = useContext(CartContext);
   const sidebarRef = useRef(null);
 
   //Close sidebar when clicked outside
-  useOutsideClick(sidebarRef,setSidebar);
+  useOutsideClick(sidebarRef, setSidebar);
 
   return (
     <nav
