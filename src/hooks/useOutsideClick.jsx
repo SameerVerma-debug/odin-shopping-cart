@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 
-export default function useOutsideSidebarClick(ref,setDisplay) {
+export default function useOutsideClick(ref,setDisplay) {
   //Close sidebar on outside click
   useEffect(() => {
     // Add event listener to the document object

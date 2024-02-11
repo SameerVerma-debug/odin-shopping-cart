@@ -9,6 +9,7 @@ import { Header } from "./components/Header";
 import { Footer } from "./components/Footer";
 import { createContext, useState } from "react";
 import "./styles/app.css"
+import { useFetch } from "./hooks/useFetch";
 
 export const CartContext = createContext();
 

@@ -3,14 +3,14 @@ import { FaShoppingBag, FaShoppingCart } from "react-icons/fa";
 import { NavLink } from "react-router-dom";
 import { CartContext } from "../App";
 import { useContext, useEffect, useRef } from "react";
-import useOutsideSidebarClick from "../hooks/useOutsideSidebarClick";
+import useOutsideClick from "../hooks/useOutsideClick";
 
 export const Sidebar = ({sidebar,setSidebar}) => {
   const { cartItems } = useContext(CartContext);
   const sidebarRef = useRef(null);
 
   //Close sidebar when clicked outside
-  useOutsideSidebarClick(sidebarRef,setSidebar);
+  useOutsideClick(sidebarRef,setSidebar);
 
   return (
     <nav

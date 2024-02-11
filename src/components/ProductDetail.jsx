@@ -10,9 +10,12 @@ import "react-toastify/dist/ReactToastify.css";
 
 export const ProductDetail = () => {
   const { id } = useParams();
+
+  //when id changes new product details are fetched
+  //must to reload page when a new product is searched
   const [product, loading, error] = useFetch({
     path: `/products/${id}`,
-    dependencies: [],
+    dependencies: [id],
   });
 
   //quantity to set in cart

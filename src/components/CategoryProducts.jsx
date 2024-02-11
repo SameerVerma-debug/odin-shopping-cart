@@ -6,6 +6,8 @@ import { Sort } from "./Sort";
 
 export const CategoryProducts = () => {
   const { name } = useParams();
+
+  //fetch data when name changes
   const [data, loading, error] = useFetch({
     path: `/products/category/${name}`,
     dependencies: [name],
