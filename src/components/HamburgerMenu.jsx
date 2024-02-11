@@ -4,7 +4,7 @@ export const HamburgerMenu = ({setSidebar}) => {
   return (
     <button
       className="open-sidebar hideOnDesktop"
-      onClick={() => setSidebar("flex")}
+      onClick={() => setSidebar(true)}
     >
       <RxHamburgerMenu size={20} />
     </button>

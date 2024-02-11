@@ -7,7 +7,7 @@ import { Search } from "./Search";
 import { HamburgerMenu } from "./HamburgerMenu";
 
 export const Header = () => {
-  const [sidebar, setSidebar] = useState("none");
+  const [sidebar, setSidebar] = useState(false);
 
   return (
     <div className="header">
