@@ -1,7 +1,7 @@
 import { CiSearch } from "react-icons/ci";
 import { useFetch } from "../hooks/useFetch";
 import { useRef, useState } from "react";
-import "../styles/search.css";
+import "../styles/autocomplete.css";
 import { debounce } from "../utils/debounce";
 import { SearchOption } from "./SearchOption";
 import useOutsideClick from "../hooks/useOutsideClick";
